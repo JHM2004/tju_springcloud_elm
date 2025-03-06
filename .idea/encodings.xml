@@ -37,10 +37,16 @@
     <file url="file://$PROJECT_DIR$/gateway_server_14000/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/likes_server_10900/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/likes_server_10900/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/likes_server_10901/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/likes_server_10901/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders_server_10600/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders_server_10600/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders_server_10601/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders_server_10601/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/remark_server_11000/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/remark_server_11000/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/search_server_11100/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/search_server_11100/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user_server_10100/src/main/java" charset="UTF-8" />

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.neusoft.po.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ import com.neusoft.service.FavoriteService;
 
 @RestController
 @RequestMapping("/FavoriteController")
-@CrossOrigin
+@RefreshScope
 public class FavoriteController {
 	
 	@Autowired

@@ -4,6 +4,7 @@ import com.neusoft.po.Chats;
 import com.neusoft.po.CommonResult;
 import com.neusoft.service.ChatsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ChatsController")
-@CrossOrigin
+@RefreshScope
 public class ChatsController {
 	@Autowired 
 	private ChatsService chatsService;

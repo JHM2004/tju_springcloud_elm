@@ -28,6 +28,9 @@
         <module>favorite_server_10801</module>
         <module>likes_server_10900</module>
         <module>likes_server_10901</module>
+        <module>remark_server_11000</module>
+        <module>search_server_11100</module>
+        <module>search_server_11101</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->

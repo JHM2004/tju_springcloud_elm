@@ -51,6 +51,18 @@ spring:
           uri: lb://chats-server
           predicates:
             - Path=/ChatsController/**
+        - id: favoriteServer
+          uri: lb://favorite-server
+          predicates:
+            - Path=/FavoriteController/**
+        - id: likesServer
+          uri: lb://likes-server
+          predicates:
+            - Path=/LikesController/**
+        - id: remarkServer
+          uri: lb://remark-server
+          predicates:
+            - Path=/RemarkController/**
 
 #eureka配置
 eureka:
