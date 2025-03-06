@@ -1,0 +1,15 @@
+server:
+    port: 13000
+    
+#eureka配置
+eureka:    
+    instance:
+        hostname: eurekaServer13000    #eureka server主机名（集群版写法）
+    client:
+        register-with-eureka: false    #是否将自己注册给eureka server（默认为true）
+        fetch-registry: false          #是否启用从注册中心拉取服务列表的功能（默认为true）
+        service-url:
+            #将13000注册给13001，反之，也要将13001注册给13000
+            defaultZone: http://eurekaServer13001:13001/eureka/
+    server:  
+        enable-self-preservation: false    #关闭自我保护机制
