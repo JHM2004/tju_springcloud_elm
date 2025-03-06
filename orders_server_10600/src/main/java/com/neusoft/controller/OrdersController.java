@@ -12,7 +12,6 @@ import com.neusoft.service.OrdersService;
 
 @RestController
 @RequestMapping("/OrdersController")
-@CrossOrigin("*")
 public class OrdersController {
  @Autowired
  private OrdersService ordersService;

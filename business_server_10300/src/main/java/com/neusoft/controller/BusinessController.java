@@ -1,32 +1,25 @@
 package com.neusoft.controller;
 
+import com.neusoft.feign.FoodFeignClient;
 import com.neusoft.po.Business;
 import com.neusoft.po.CommonResult;
 import com.neusoft.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.resource.ResourceUrlProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/BusinessController")
-@CrossOrigin("*")
 public class BusinessController {
 
     @Autowired
     private BusinessService businessService;
 
     @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
-    private ResourceUrlProvider mvcResourceUrlProvider;
-
-    @Autowired
-    private DiscoveryClient discoveryClient;
+    private FoodFeignClient foodFeignClient;
 
     @GetMapping("/listBusinessByOrderTypeId/{orderTypeId}")
     public CommonResult<List> listBusinessByOrderTypeId(
@@ -40,19 +33,17 @@ public class BusinessController {
     public CommonResult<Business> getBusinessById(
             @PathVariable("businessId") Integer businessId
     ) throws Exception {
-        //通过 食品 微服务名(food-server), 获取eureka server上的元数据
-        List<ServiceInstance> instanceList = discoveryClient.getInstances("food-server");
-        ServiceInstance instance = instanceList.get(0);
-
         Business business = businessService.getBusinessById(businessId);
         //在商家微服务中调用食品微服务
-        CommonResult<List> result = restTemplate.getForObject("http://"+instance.getHost()+":"+instance.getPort()+"/FoodController/listFoodByBusinessId/" + business, CommonResult.class);
+        CommonResult<List> result = foodFeignClient.listFoodByBusinessId(businessId);
+        // 如果食品微服务返回降级相应,那么就返回空集合
         if (result.getCode() == 200) {
             business.setFoodList(result.getResult());
+        }else{
+            business.setFoodList(new ArrayList());
         }
-        return new CommonResult(200, "success", business);
+        return new CommonResult(200, "success(10300)", business);
     }
-
 
     // TODO 下面也可以改成restful风格的api
     @RequestMapping("/saveBusiness")

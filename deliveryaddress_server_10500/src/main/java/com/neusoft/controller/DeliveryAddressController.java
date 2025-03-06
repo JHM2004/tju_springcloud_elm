@@ -10,7 +10,6 @@ import com.neusoft.service.DeliveryAddressService;
 
 @RestController
 @RequestMapping("/DeliveryAddressController")
-@CrossOrigin("*")
 public class DeliveryAddressController {
 
     @Autowired

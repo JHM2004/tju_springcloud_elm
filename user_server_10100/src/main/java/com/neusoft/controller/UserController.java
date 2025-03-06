@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/UserController")
-@CrossOrigin("*")                      //跨域处理 - 临时写法 , 加入网关的时候再统一配置
 public class UserController {
 
     @Autowired
