@@ -5,6 +5,7 @@ import com.neusoft.po.Business;
 import com.neusoft.po.CommonResult;
 import com.neusoft.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.resource.ResourceUrlProvider;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/BusinessController")
+@RefreshScope
 public class BusinessController {
 
     @Autowired

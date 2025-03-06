@@ -6,10 +6,12 @@ import com.neusoft.po.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.neusoft.po.Cart;
 import com.neusoft.service.CartService;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/CartController")
+@RefreshScope
 public class CartController {
     @Autowired
     private CartService cartService;

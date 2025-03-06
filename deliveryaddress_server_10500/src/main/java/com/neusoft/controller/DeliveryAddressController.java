@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.neusoft.po.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import com.neusoft.po.DeliveryAddress;
 import com.neusoft.service.DeliveryAddressService;
 
 @RestController
 @RequestMapping("/DeliveryAddressController")
+@RefreshScope
 public class DeliveryAddressController {
 
     @Autowired

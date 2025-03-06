@@ -12,6 +12,21 @@
     </properties>
 
     <dependencies>
+        <!-- springcloud bus 依赖  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-bus</artifactId>
+        </dependency>
+        <!-- rabbitMQ 依赖  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
+        <!-- boot的监听 依赖  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!--  springcloud config依赖  -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

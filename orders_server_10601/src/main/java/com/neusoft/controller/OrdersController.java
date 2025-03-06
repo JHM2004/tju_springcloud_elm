@@ -5,6 +5,7 @@ import com.neusoft.po.OrderDetailet;
 import com.neusoft.po.Orders;
 import com.neusoft.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/OrdersController")
+@RefreshScope
 public class OrdersController {
  @Autowired
  private OrdersService ordersService;
