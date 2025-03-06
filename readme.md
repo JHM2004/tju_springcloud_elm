@@ -21,7 +21,7 @@ File -> Settings -> 搜索"temporary configuration limit" -> Advanced Settings -
 
 ### 3.安装erlang与rabbitmq
 
-具体参考:   [Windows下Erlang和RabbitMQ下载安装教程 - show-code - 博客园](https://www.cnblogs.com/xing-nb/p/15204526.html)  , 要确保rabbitmq是运行状态.
+具体可参考:   [Windows下Erlang和RabbitMQ下载安装教程 - show-code - 博客园](https://www.cnblogs.com/xing-nb/p/15204526.html)  , 要确保rabbitmq是运行状态.
 
 ## 二. 饿了么 SpringCloud 版项目安装环境部署指南
 
@@ -72,4 +72,25 @@ File -> Settings -> 搜索"temporary configuration limit" -> Advanced Settings -
 ## 三. 项目架构图
 
 ![image-20250307010420050](assets/image-20250307010420050.png)
+
+```微服务项目与本机端口对应关系
+| 微服务      | 端口1 | 端口2     |
+| :---        |    :----:   |          ---: |
+| user | 10100 | 10101 |
+| food | 10200 | 10201 |
+| business      | 10300       | 10301   |
+| cart   | 10400        | 10401      |
+| deliveryaddress | 10500 | 10501 |
+| orders | 10600 | 10601 |
+| chats | 10700 | 10701 |
+| favorite | 10800 | 10801 |
+| likes | 10900 | 10901 |
+| remark | 11000 | 11001 |
+| search | 11100 | 11101 | 
+| credit | 11200 | 11201 |
+| virtualwallet | 11300 | 11301 |
+| eureka | 13000 | 13001 |
+| gateway | 14000 | |
+| config | 15000 | 15001 |
+```
 
