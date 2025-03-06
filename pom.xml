@@ -24,6 +24,8 @@
         <module>chats_server_10701</module>
         <module>deliveryaddress_server_10501</module>
         <module>user_server_10101</module>
+        <module>favorite_server_10800</module>
+        <module>favorite_server_10801</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->

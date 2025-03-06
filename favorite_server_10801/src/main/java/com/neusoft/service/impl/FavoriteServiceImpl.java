@@ -1,0 +1,31 @@
+package com.neusoft.service.impl;
+
+import com.neusoft.mapper.FavoriteMapper;
+import com.neusoft.po.Favorite;
+import com.neusoft.service.FavoriteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class FavoriteServiceImpl implements FavoriteService{
+	
+	@Autowired
+	private FavoriteMapper favoriteMapper;
+	
+	@Override
+	public int saveFavoriteBusinessId(Favorite favorite) {
+		return favoriteMapper.saveFavoriteBusinessId(favorite);
+	}
+
+	@Override
+	public List<Integer> listFavoriteByUserId(Favorite favorite) {
+		return favoriteMapper.listFavoriteByUserId(favorite);
+	}
+
+	@Override
+	public int removeFavoriteBusinessId(Favorite favorite) {
+		return favoriteMapper.removeFavoriteBusinessId(favorite);
+	}
+}
