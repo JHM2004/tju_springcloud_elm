@@ -18,6 +18,7 @@
         <module name="virtualwallet_server_11300" />
         <module name="virtualwallet_server_11301" />
         <module name="favorite_server_10801" />
+        <module name="credit_server_11201" />
         <module name="business_server_10300" />
         <module name="favorite_server_10800" />
         <module name="credit_server_11200" />
@@ -32,6 +33,7 @@
         <module name="cart_server_10400" />
         <module name="orders_server_10600" />
         <module name="remark_server_11000" />
+        <module name="remark_server_11001" />
         <module name="gateway_server_14000" />
         <module name="deliveryaddress_server_10500" />
         <module name="deliveryaddress_server_10501" />

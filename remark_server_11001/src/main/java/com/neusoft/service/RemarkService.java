@@ -1,8 +1,8 @@
 package com.neusoft.service;
 
-import java.util.List;
-
 import com.neusoft.po.Remark;
+
+import java.util.List;
 
 public interface RemarkService {
 	

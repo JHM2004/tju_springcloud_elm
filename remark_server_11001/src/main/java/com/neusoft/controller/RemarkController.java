@@ -1,15 +1,14 @@
 package com.neusoft.controller;
 
-import java.util.List;
-
+import com.neusoft.po.Remark;
+import com.neusoft.service.RemarkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neusoft.po.Remark;
-import com.neusoft.service.RemarkService;
+import java.util.List;
 
 @RestController
 @RequestMapping("/RemarkController")
