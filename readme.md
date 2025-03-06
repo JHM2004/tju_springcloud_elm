@@ -1,4 +1,4 @@
-### 前期准备:
+## 前期准备:
 
 ### 1.修改本机hosts文件
 
@@ -20,7 +20,7 @@
 
 
 
-### 饿了么 SpringCloud 版项目安装环境部署指南
+## 饿了么 SpringCloud 版项目安装环境部署指南
 
 饿了么 SpringCloud 版项目是采用了 VUE-CLI+SpringCloud 开发的前后端分离的微服务项目。
 
