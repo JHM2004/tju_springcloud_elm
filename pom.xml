@@ -26,6 +26,8 @@
         <module>user_server_10101</module>
         <module>favorite_server_10800</module>
         <module>favorite_server_10801</module>
+        <module>likes_server_10900</module>
+        <module>likes_server_10901</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->
