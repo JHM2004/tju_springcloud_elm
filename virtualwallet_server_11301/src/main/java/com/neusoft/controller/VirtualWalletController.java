@@ -1,6 +1,7 @@
 package com.neusoft.controller;
 
 import com.neusoft.mapper.CreditMapper;
+import com.neusoft.po.CommonResult;
 import com.neusoft.po.WalletFlowDto;
 import com.neusoft.po.WalletFlowVo;
 import com.neusoft.service.VirtualWalletService;
@@ -24,76 +25,96 @@ public class VirtualWalletController {
     private CreditMapper creditMapper;
 
     @GetMapping("/addWalletById")
-    public int addWalletById(@RequestParam("userId") String userId){
-        return virtualWalletService.addWalletById(userId);
+    public CommonResult<Integer> addWalletById(@RequestParam("userId") String userId){
+        int i =  virtualWalletService.addWalletById(userId);
+        return new CommonResult(200,"success",i);
     }
 
     @GetMapping("/getWhetherEnabledById")
-    public int getWhetherEnabledById(@RequestParam("userId") String userId){
-        return virtualWalletService.getWhetherEnabledById(userId);
+    public CommonResult<Integer> getWhetherEnabledById(@RequestParam("userId") String userId){
+        int i =   virtualWalletService.getWhetherEnabledById(userId);
+        return new CommonResult(200,"success",i);
     }
 
     @PostMapping("/rechargeById")
     @CachePut(cacheNames = "getCreditById", key = "#walletFlowDto.getUserId()")
-    public int rechargeById(@RequestBody WalletFlowDto walletFlowDto){
+    public CommonResult<Integer> rechargeById(@RequestBody WalletFlowDto walletFlowDto){
         virtualWalletService.rechargeById(walletFlowDto);
-        return creditMapper.getCreditAllById(walletFlowDto.getUserId());
+        int i =   creditMapper.getCreditAllById(walletFlowDto.getUserId());
+        return new CommonResult(200,"success",i);
     }
 
     @PostMapping("/withdrawById")
-    public BigDecimal withdrawById(@RequestBody WalletFlowDto walletFlowDto){
+    public CommonResult<BigDecimal> withdrawById(@RequestBody WalletFlowDto walletFlowDto){
         BigDecimal result = BigDecimal.valueOf(0);
         try {
             result = virtualWalletService.withdrawById(walletFlowDto);
         } catch (Exception e) {
-            return BigDecimal.valueOf(0);
+            return new CommonResult(200,"success",BigDecimal.valueOf(0));
         }
-        return result;
+        return new CommonResult(200,"success",result);
     }
 
     @PostMapping("/pay")
     @CachePut(cacheNames = "getCreditById", key = "#userId")
-    public int pay(@RequestBody WalletFlowDto walletFlowDto){
+    public CommonResult<Integer> pay(@RequestBody WalletFlowDto walletFlowDto){
         try {
             virtualWalletService.pay(walletFlowDto);
         } catch (Exception e) {
-            return 0;
+            return new CommonResult(200,"success",0);
         }
-        return creditMapper.getCreditAllById(walletFlowDto.getUserId());
+        int i =   creditMapper.getCreditAllById(walletFlowDto.getUserId());
+        return new CommonResult(200,"success",i);
     }
 
     @GetMapping("/getBalanceById")
-    public BigDecimal getBalanceById(@RequestParam String userId){
-        return virtualWalletService.getBalanceById(userId);
+    public CommonResult<BigDecimal> getBalanceById(@RequestParam String userId){
+        BigDecimal b =  virtualWalletService.getBalanceById(userId);
+        return new CommonResult(200,"success",b);
     }
 
     @GetMapping("/listWalletLogById")
-    public List<WalletFlowVo> listWalletLogById(@RequestParam String userId){
-        return virtualWalletService.listWalletLogById(userId);
+    public CommonResult<List> listWalletLogById(@RequestParam String userId){
+        List<WalletFlowVo> walletFlowVos = virtualWalletService.listWalletLogById(userId);
+        return new CommonResult(200,"success",walletFlowVos);
     }
 
     @GetMapping("/listWalletLogIncomeById")
-    public List<WalletFlowVo> listWalletLogIncomeById(@RequestParam String userId){
-        return virtualWalletService.listWalletLogIncomeById(userId);
+    public CommonResult<List> listWalletLogIncomeById(@RequestParam String userId){
+        List<WalletFlowVo> walletFlowVos = virtualWalletService.listWalletLogIncomeById(userId);
+        return new CommonResult(200,"success",walletFlowVos);
     }
 
     @GetMapping("/listWalletLogOutcomeById")
-    public List<WalletFlowVo> listWalletLogOutcomeById(@RequestParam String userId){
-        return virtualWalletService.listWalletLogOutcomeById(userId);
+    public CommonResult<List> listWalletLogOutcomeById(@RequestParam String userId){
+        List<WalletFlowVo> walletFlowVos = virtualWalletService.listWalletLogOutcomeById(userId);
+        return new CommonResult(200,"success",walletFlowVos);
     }
 
     @GetMapping("/getFreeze")
-    public int getFreeze(@RequestParam String userId){
-        return virtualWalletService.getFreeze(userId);
+    public CommonResult<Integer> getFreeze(@RequestParam String userId){
+        int i =   virtualWalletService.getFreeze(userId);
+        return new CommonResult(200,"success",i);
     }
 
     @PostMapping("/freeze")
-    public int freeze(@RequestParam String userId){
-        return virtualWalletService.freeze(userId);
+    public CommonResult<Integer> freeze(@RequestParam String userId){
+        int i =  virtualWalletService.freeze(userId);
+        return new CommonResult(200,"success",i);
     }
 
     @PostMapping("/unFreeze")
-    public int unFreeze(@RequestParam String userId){
-        return virtualWalletService.unFreeze(userId);
+    public CommonResult<Integer> unFreeze(@RequestParam String userId){
+        int i  = virtualWalletService.unFreeze(userId);
+        return new CommonResult(200,"success",i);
+    }
+
+    @PutMapping("/rechargeByIdByCredit/{userId}/{credit}")
+    public CommonResult rechargeByIdByCredit(
+            @PathVariable("userId") String userId,
+            @PathVariable("credit") Integer credit
+    ) throws Exception{
+        virtualWalletService.rechargeByIdByCredit(userId, credit);
+        return new CommonResult(200,"success",null);
     }
 }
