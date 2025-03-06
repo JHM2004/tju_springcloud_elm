@@ -73,22 +73,22 @@ File -> Settings -> 搜索"temporary configuration limit" -> Advanced Settings -
 
 ![image-20250307010420050](assets/image-20250307010420050.png)
 
-|                 微服务(集群)                  | 端口1 | 端口2 |     功能     |
-| :-------------------------------------------: | :---: | :---: | :----------: |
-|                  user-server                  | 10100 | 10101 |     用户     |
-|                  food-server                  | 10200 | 10201 |     食品     |
-|                business-server                | 10300 | 10301 |     商家     |
-|                  cart-server                  | 10400 | 10401 |    购物车    |
-|            deliveryaddress-server             | 10500 | 10501 |   送餐地址   |
-|                 orders-server                 | 10600 | 10601 |     订单     |
-|                 chats-server                  | 10700 | 10701 |     私信     |
-|                favorite-server                | 10800 | 10801 |     收藏     |
-|                 likes-server                  | 10900 | 10901 |     点赞     |
-|                 remark-server                 | 11000 | 11001 |     评论     |
-|                 search-server                 | 11100 | 11101 |     搜索     |
-|                 credit-server                 | 11200 | 11201 |     积分     |
-|             virtualwallet-server              | 11300 | 11301 |   虚拟钱包   |
-| eureka (eurekaServer13000, eurekaServer13001) | 13000 | 13001 | 服务注册中心 |
-|                gateway-server                 | 14000 |       |     网关     |
-|                 config-server                 | 15000 | 15001 | 服务配置中心 |
+|                 微服务(集群)                  | 应用1端口 | 应用2端口 |     功能     |
+| :-------------------------------------------: | :-------: | :-------: | :----------: |
+|                  user-server                  |   10100   |   10101   |     用户     |
+|                  food-server                  |   10200   |   10201   |     食品     |
+|                business-server                |   10300   |   10301   |     商家     |
+|                  cart-server                  |   10400   |   10401   |    购物车    |
+|            deliveryaddress-server             |   10500   |   10501   |   送餐地址   |
+|                 orders-server                 |   10600   |   10601   |     订单     |
+|                 chats-server                  |   10700   |   10701   |     私信     |
+|                favorite-server                |   10800   |   10801   |     收藏     |
+|                 likes-server                  |   10900   |   10901   |     点赞     |
+|                 remark-server                 |   11000   |   11001   |     评论     |
+|                 search-server                 |   11100   |   11101   |     搜索     |
+|                 credit-server                 |   11200   |   11201   |     积分     |
+|             virtualwallet-server              |   11300   |   11301   |   虚拟钱包   |
+| eureka (eurekaServer13000, eurekaServer13001) |   13000   |   13001   | 服务注册中心 |
+|                gateway-server                 |   14000   |           |     网关     |
+|                 config-server                 |   15000   |   15001   | 服务配置中心 |
 
