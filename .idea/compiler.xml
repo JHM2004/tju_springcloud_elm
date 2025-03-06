@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cart_server_10400" />
+        <module name="orders_server_10600" />
         <module name="food_server_10200" />
         <module name="deliveryaddress_server_10500" />
         <module name="business_server_10300" />
