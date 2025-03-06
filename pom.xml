@@ -22,6 +22,7 @@
         <module>config_server_15001</module>
         <module>chats_server_10700</module>
         <module>chats_server_10701</module>
+        <module>deliveryaddress_server_10501</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->

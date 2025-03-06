@@ -22,6 +22,7 @@
         <module name="gateway_server_14000" />
         <module name="business_server_10301" />
         <module name="deliveryaddress_server_10500" />
+        <module name="deliveryaddress_server_10501" />
         <module name="business_server_10300" />
       </profile>
     </annotationProcessing>

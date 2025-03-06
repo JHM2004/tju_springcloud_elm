@@ -19,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/config_server_15001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/deliveryaddress_server_10500/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/deliveryaddress_server_10500/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/deliveryaddress_server_10501/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/deliveryaddress_server_10501/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka_server_13000/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka_server_13000/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka_server_13001/src/main/java" charset="UTF-8" />

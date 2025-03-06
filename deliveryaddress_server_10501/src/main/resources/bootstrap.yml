@@ -1,23 +1,12 @@
-server:
-  port: 10200
-
-logging:
-  level:
-    org.springframework: debug
-    com.neusoft.mapper: debug
-
 spring:
-  application:
-    name: food-server
-  datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://localhost:3306/elm?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
-
-mybatis:
-  mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: com.neusoft.po
+  cloud:
+    config:
+      name: deliveryaddress_server_10501     #应用名称，对应git中的文件名的前半部分
+      profile: dev                    #开发环境名称，对应git中的文件名的后半部分
+      label: master                   #git分支
+      discovery: #从Eureka中获取config server信息
+        enabled: true               #开启服务发现
+        service-id: config-server
 
 #eureka配置
 eureka:

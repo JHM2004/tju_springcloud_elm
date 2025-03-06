@@ -9,6 +9,19 @@ spring:
             server:
                 git:
                     uri: https://gitee.com/Yang_yuxin123/tju_springcloud_elm_config.git  #git远程仓库地址
+    #rabbitMQ的配置
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5672
+        username: guest
+        password: guest
+
+#bus总线的配置
+management:
+    endpoints:
+        web:
+            exposure:
+                include: bus-refresh  #暴露bus-refresh节点，通过此节点进行刷新配置的
 
 #eureka配置
 eureka:        
@@ -20,4 +33,5 @@ eureka:
         prefer-ip-address: true   #使用ip地址向eureka server进行注册
         instance-id: ${spring.cloud.client.ip-address}:${server.port}   #设置eureka控制台中显示的注册信息   
         lease-renewal-interval-in-seconds: 5         #续约间隔时间
-        lease-expiration-duration-in-seconds: 15     #续约到期时间                     
+        lease-expiration-duration-in-seconds: 15     #续约到期时间
+

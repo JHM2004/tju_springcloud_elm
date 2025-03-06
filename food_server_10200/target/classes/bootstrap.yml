@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    config:
+      name: food_server_10200     #应用名称，对应git中的文件名的前半部分
+      profile: dev                    #开发环境名称，对应git中的文件名的后半部分
+      label: master                   #git分支
+      discovery: #从Eureka中获取config server信息
+        enabled: true               #开启服务发现
+        service-id: config-server
+
+#eureka配置
+eureka:
+  client:
+    service-url:
+      #将自己注册给defaultZone所指定的eureka server集群上
+      defaultZone: http://eurekaServer13000:13000/eureka/,http://eurekaServer13001:13001/eureka/
+  instance:
+    prefer-ip-address: true   #使用ip地址向eureka server进行注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}   #设置eureka控制台中显示的注册信息
+    lease-renewal-interval-in-seconds: 5         #续约间隔时间
+    lease-expiration-duration-in-seconds: 15     #续约到期时间
