@@ -63,6 +63,20 @@ spring:
           uri: lb://remark-server
           predicates:
             - Path=/RemarkController/**
+        - id: searchServer
+          uri: lb://search-server
+          predicates:
+            - Path=/SearchController/**
+        - id: creditServer
+          uri: lb://credit-server
+          predicates:
+            - Path=/CreditController/**
+        - id: virtualwalletServer
+          uri: lb://virtualwallet-server
+          predicates:
+            - Path=/VirtualwalletController/**
+
+
 
 #eureka配置
 eureka:
