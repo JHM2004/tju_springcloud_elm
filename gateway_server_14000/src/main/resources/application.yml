@@ -47,6 +47,10 @@ spring:
           uri: lb://orders-server
           predicates:
             - Path=/OrdersController/**
+        - id: chatsServer
+          uri: lb://chats-server
+          predicates:
+            - Path=/ChatsController/**
 
 #eureka配置
 eureka:

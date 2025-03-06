@@ -20,6 +20,8 @@
         <module>orders_server_10601</module>
         <module>config_server_15000</module>
         <module>config_server_15001</module>
+        <module>chats_server_10700</module>
+        <module>chats_server_10701</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->

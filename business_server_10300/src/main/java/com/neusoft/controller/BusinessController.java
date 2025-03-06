@@ -49,38 +49,38 @@ public class BusinessController {
 
     // TODO 下面也可以改成restful风格的api
     @RequestMapping("/saveBusiness")
-    public int saveBusiness(@RequestBody Business business) throws Exception {
-        return businessService.saveBusiness(business);
+    public CommonResult<Integer> saveBusiness(@RequestBody Business business) throws Exception {
+        int i = businessService.saveBusiness(business);
+        return new CommonResult(200, "success", i);
     }
 
     @RequestMapping("/getBusinessIdByPhoneNumber")
-    public int getBusinessIdByPhoneNumber(@RequestBody Business business) throws Exception {
-        return businessService.getBusinessIdByPhoneNumber(business);
+    public CommonResult<Integer> getBusinessIdByPhoneNumber(@RequestBody Business business) throws Exception {
+        int  i =  businessService.getBusinessIdByPhoneNumber(business);
+        return new CommonResult(200, "success", i);
     }
 
     @RequestMapping("/checkBusiness")
-    public int checkBusiness(@RequestBody Business business) throws Exception {
-        return businessService.checkBusiness(business);
+    public CommonResult<Integer> checkBusiness(@RequestBody Business business) throws Exception {
+        int i  =  businessService.checkBusiness(business);
+        return new CommonResult(200, "success", i);
     }
 
-
     @RequestMapping("/getBusinessByIdByPass")
-    public Business getBusinessByIdByPass(@RequestBody Business business) {
-        return businessService.getBusinessByIdByPass(business);
+    public CommonResult<Business> getBusinessByIdByPass(@RequestBody Business business) {
+        Business businessByIdByPass = businessService.getBusinessByIdByPass(business);
+        return new CommonResult(200, "success", businessByIdByPass);
     }
 
     @RequestMapping("/listBusinessByBusinessName")
-    public List<Business> listBusinessByBusinessName(@RequestBody Business business) throws Exception {
-        return businessService.listBusinessByBusinessName(business.getBusinessName());
+    public CommonResult<List> listBusinessByBusinessName(@RequestBody Business business) throws Exception {
+        List<Business> businesses = businessService.listBusinessByBusinessName(business.getBusinessName());
+        return new CommonResult(200, "success", businesses);
     }
 
     @RequestMapping("/updateBusiness")
-    public int updateBusiness(@RequestBody Business business) throws Exception {
-        return businessService.updateBusiness(business);
-    }
-
-    @RequestMapping("/test")
-    public String test() {
-        return "test";
+    public CommonResult<Integer> updateBusiness(@RequestBody Business business) throws Exception {
+        int i =  businessService.updateBusiness(business);
+        return new CommonResult(200, "success", i);
     }
 }

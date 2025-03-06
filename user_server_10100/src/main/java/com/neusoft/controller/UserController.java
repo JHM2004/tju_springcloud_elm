@@ -50,30 +50,34 @@ public class UserController {
         user.setUserName(userName);
         user.setUserSex(userSex);
         int result = userService.saveUser(user);
-        return new CommonResult(200,"success",result);
+        return new CommonResult(200, "success", result);
     }
 
 
 // TODO 下面也应该修改为restful风格
 
     @RequestMapping("/changeUserAvatar")
-    public int changeUserAvatar(@RequestBody UserAvatar userAvatar) throws Exception {
-        return userService.changeUserAvatar(userAvatar);
+    public CommonResult<Integer> changeUserAvatar(@RequestBody UserAvatar userAvatar) throws Exception {
+        int i = userService.changeUserAvatar(userAvatar);
+        return new CommonResult(200, "success", i);
     }
 
     @RequestMapping("/changeUserName")
-    public int changeUserName(@RequestBody User user) throws Exception {
-        return userService.changeUserName(user);
+    public CommonResult<Integer> changeUserName(@RequestBody User user) throws Exception {
+        int i = userService.changeUserName(user);
+        return new CommonResult(200, "success", i);
     }
 
     @RequestMapping("/changeUserPassword")
-    public int changeUserPassword(@RequestBody UserPsd userPsd) throws Exception {
-        return userService.changeUserPassword(userPsd);
+    public CommonResult<Integer> changeUserPassword(@RequestBody UserPsd userPsd) throws Exception {
+        int i = userService.changeUserPassword(userPsd);
+        return new CommonResult(200, "success", i);
     }
 
     @RequestMapping("/userIdExists")
-    public int userIdExists(@RequestBody User user) throws Exception {
-        return userService.userIdExists(user);
+    public CommonResult<Integer> userIdExists(@RequestBody User user) throws Exception {
+        int i = userService.userIdExists(user);
+        return new CommonResult(200, "success", i);
     }
 
 }

@@ -54,18 +54,21 @@ public class OrdersController {
  //TODO 下面可以改成restful风格的api
 
  @RequestMapping("/payOk")
- public int payOk(@RequestBody Orders orders) throws Exception{
-  return ordersService.payOk(orders);
+ public CommonResult<Integer> payOk(@RequestBody Orders orders) throws Exception {
+  int i = ordersService.payOk(orders);
+  return new CommonResult(200, "success", i);
  }
- 
+
  @RequestMapping("/listOrderDetailetByOrderId")
- public List<OrderDetailet> listOrderDetailetByOrderId(@RequestBody Orders orders){
-	 return ordersService.listOrderDetailetByOrderId(orders);
+ public CommonResult<List> listOrderDetailetByOrderId(@RequestBody Orders orders) {
+  List<OrderDetailet> orderDetailets = ordersService.listOrderDetailetByOrderId(orders);
+  return new CommonResult(200, "success", orderDetailets);
  }
- 
+
  @RequestMapping("/listOdIdByOrderId")
- public List<Integer> listOdIdByOrderId(@RequestBody Orders orders){
-	 return ordersService.listOdIdByOrderId(orders);
+ public CommonResult<List> listOdIdByOrderId(@RequestBody Orders orders) {
+  List<Integer> integers = ordersService.listOdIdByOrderId(orders);
+  return new CommonResult(200, "success", integers);
  }
 
 }

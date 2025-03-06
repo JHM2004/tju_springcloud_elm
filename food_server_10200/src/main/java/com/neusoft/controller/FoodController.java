@@ -28,8 +28,9 @@ public class FoodController {
 
     // TODO 下面也可以改成restful风格的api
     @RequestMapping("/addFood")
-    public int addFood(@RequestBody Food food) throws Exception {
-        return foodService.addFood(food);
+    public CommonResult<Integer> addFood(@RequestBody Food food) throws Exception {
+        int i =  foodService.addFood(food);
+        return new CommonResult(200, "success(200)", i);
     }
 
 }
