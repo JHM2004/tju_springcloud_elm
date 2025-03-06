@@ -22,7 +22,7 @@ public class FoodController {
             @PathVariable("businessId") Integer businessId
     ) throws Exception {
         List<Food> list = foodService.listFoodByBusinessId(businessId);
-        return new CommonResult(200, "success(10200)", list);
+        return new CommonResult(200, "success(10201)", list);
     }
 
     // TODO 下面也可以改成restful风格的api

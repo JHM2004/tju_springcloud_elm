@@ -1,5 +1,5 @@
 server:
-  port: 10500
+  port: 10201
 
 logging:
   level:
@@ -8,7 +8,7 @@ logging:
 
 spring:
   application:
-    name: deliveryaddress-server
+    name: food-server
   datasource:
     username: root
     password: 123456
