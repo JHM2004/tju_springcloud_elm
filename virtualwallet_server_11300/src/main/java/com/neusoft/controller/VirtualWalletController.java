@@ -96,4 +96,12 @@ public class VirtualWalletController {
     public int unFreeze(@RequestParam String userId){
         return virtualWalletService.unFreeze(userId);
     }
+
+    @PutMapping("/rechargeByIdByCredit/{userId}/{credit}")
+    void rechargeByIdByCredit(
+        @PathVariable("userId") String userId,
+        @PathVariable("credit") Integer credit
+    ) throws Exception{
+        virtualWalletService.rechargeByIdByCredit(userId, credit);
+    }
 }

@@ -34,6 +34,7 @@
         <module>credit_server_11200</module>
         <module>virtualwallet_server_11300</module>
         <module>virtualwallet_server_11301</module>
+        <module>credit_server_11201</module>
     </modules>
 
     <!--  统一JAR包和版本号的管理  -->
